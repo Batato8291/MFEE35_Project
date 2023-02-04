@@ -1,0 +1,81 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+#navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+    180deg,
+    #000000 17.71%,
+    rgba(209, 209, 209, 0) 87.19%
+  );
+
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  padding: 0 20%;
+  &.hide {
+    top: -100px;
+  }
+  div {
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
+
+.banner {
+  margin-top: 80px;
+  width: 100%;
+  background-color: aquamarine;
+}
+.moving_tsuchinoko {
+  position: absolute;
+  z-index: 1;
+}
+
+.container_box {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(77, 61, 40);
+  position: relative;
+}
+
+.dancing-dog {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  offset-path: path(
+    "M 185.007 0.967 Q 86.55 5.756 83.721 76.956 C 83.721 129.812 52.232 128.688 11.747 150.055"
+  );
+  offset-rotate: 90deg;
+  animation: move 1s linear infinite;
+  //   offset-distance: 50%;
+}
+
+@keyframes move {
+  100% {
+    offset-distance: 100%;
+  }
+}
+#dancing-dog-gif {
+  width: 100px;
+  object-fit: cover;
+}
