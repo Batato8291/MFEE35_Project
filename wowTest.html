@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <style>
+      div {
+        width: 100vw;
+        height: 100vh;
+      }
+      img {
+        display: block;
+        margin: 10vh auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wow flash" data-wow-offset="100" data-wow-iteration="infinite">
+      <img src="https://picsum.photos/300/400?random=1" />
+    </div>
+    <div class="wow flipInX" data-wow-offset="100" data-wow-iteration="5">
+      <img src="https://picsum.photos/300/400?random=2" />
+    </div>
+    <div class="wow hinge" data-wow-offset="100" data-wow-delay="3s">
+      <img src="https://picsum.photos/300/400?random=3" />
+    </div>
+    <div class="wow rollIn" data-wow-offset="100" data-wow-duration="3s">
+      <img src="https://picsum.photos/300/400?random=4" />
+    </div>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>

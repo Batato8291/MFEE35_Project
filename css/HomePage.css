@@ -4,8 +4,6 @@ body {
 }
 
 #navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 0;
@@ -13,31 +11,46 @@ body {
   z-index: 1;
   width: 100%;
   height: 100px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(17.71%, #000000), color-stop(87.19%, rgba(209, 209, 209, 0)));
   background: linear-gradient(180deg, #000000 17.71%, rgba(209, 209, 209, 0) 87.19%);
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all 0.5s ease-in-out;
+  justify-content: space-around;
+  align-items: center;
   transition: all 0.5s ease-in-out;
   padding: 0 20%;
 }
-
 #navbar.hide {
   top: -100px;
 }
-
 #navbar div a {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
 }
-
 #navbar div a:hover {
   color: yellow;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(114, 70, 12);
+}
+header .header_inner {
+  color: white;
+}
+header .header_inner .header_inner_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+header .header_inner .header_inner_list a {
+  color: white;
+  text-decoration: none;
 }
 
 .banner {
@@ -51,10 +64,16 @@ body {
   z-index: 1;
 }
 
+.slide_in {
+  opacity: 1;
+  transform: translateY(50px);
+  transition: all 0.5s;
+}
+
 .container_box {
   width: 500px;
   height: 500px;
-  background-color: #4d3d28;
+  background-color: rgb(77, 61, 40);
   position: relative;
 }
 
@@ -62,15 +81,9 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   offset-path: path("M 185.007 0.967 Q 86.55 5.756 83.721 76.956 C 83.721 129.812 52.232 128.688 11.747 150.055");
   offset-rotate: 90deg;
   -webkit-animation: move 1s linear infinite;
@@ -88,10 +101,8 @@ body {
     offset-distance: 100%;
   }
 }
-
 #dancing-dog-gif {
   width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-/*# sourceMappingURL=HomePage.css.map */
+}/*# sourceMappingURL=HomePage.css.map */

@@ -36,6 +36,28 @@ body {
     }
   }
 }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(114, 70, 12);
+  .header_inner {
+    color: white;
+    .header_inner_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 .banner {
   margin-top: 80px;
@@ -45,6 +67,11 @@ body {
 .moving_tsuchinoko {
   position: absolute;
   z-index: 1;
+}
+.slide_in {
+  opacity: 1;
+  transform: translateY(50px);
+  transition: all 0.5s;
 }
 
 .container_box {

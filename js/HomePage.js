@@ -13,3 +13,13 @@ document.addEventListener("scroll", function () {
   // 根據未來位置做比較
   lastPos = currentPos;
 });
+
+window.addEventListener("scroll", function () {
+  let target = document.querySelector(".slide_item");
+  let targetPos = target.getBoundingClientRect().top;
+  let windowHeight = window.innerHeight;
+
+  if (targetPos < windowHeight) {
+    target.classList.add("slide_in");
+  }
+});
