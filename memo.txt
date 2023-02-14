@@ -1,0 +1,13 @@
+     <!-- tsuchinoko -->
+          <svg
+            class="moving_tsuchinoko d-none d-lg-block"
+            height="400"
+            width="400"
+          >
+            <path
+              d="M 185.007 0.967 Q 86.55 5.756 83.721 76.956 C 83.721 129.812 52.232 128.688 11.747 150.055"
+              stroke="white"
+              stroke-width="5"
+            />
+            <img id="dancing-dog-gif" src="./_img/dancing-dog.gif" alt="" />
+          </svg>

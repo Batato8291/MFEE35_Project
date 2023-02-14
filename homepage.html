@@ -15,6 +15,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="./css/HomePage.css" />
   </head>
   <body>
@@ -76,87 +80,108 @@
       </nav>
     </header>
     <main>
-      <div class="container-fuild">
-        <!-- banner -->
-        <div class="banner">
-          <img class="w-100" src="https://picsum.photos/600/600?random=1" />
+      <!-- banner -->
+      <div class="banner">
+        <div id="banner_cover">
+          <img class="w-100" src="https://picsum.photos/1200/1200?random=1" />
         </div>
-        <!-- first paragraph -->
-        <div
-          class="d-flex flex-wrap justify-content-around mt-3 position-relative"
-        >
-          <div class="col-8 col-lg-5 order-lg-1">
-            <div class="text-center">
-              <img
-                class="rounded-circle w-100"
-                src="https://picsum.photos/400/400?random=2"
-              />
-            </div>
+        <div id="banner_select" class="">
+          <div class="active">
+            <img src="https://picsum.photos/40/40?random=1" />
           </div>
-          <div class="col-8 col-lg-5 d-flex">
-            <div class="align-self-center">
+        </div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center">
+        <!-- introduction -->
+        <div id="main_intro" class="pt-2">
+          <div class="my-4 px-4 fs-2 fw-bold">
+            <div>INTRO</div>
+            <div>DUCTION</div>
+          </div>
+          <!-- intro-items -->
+          <div class="row mx-0 justify-content-center mb-5">
+            <div class="col-9">
+              <div class="mb-3">
+                <img
+                  class="w-100 rounded-circle"
+                  src="https://picsum.photos/400/400?random=15"
+                />
+              </div>
+            </div>
+            <div class="col-9">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ratione voluptates ut rem vitae unde molestiae perferendis eius
-                vel possimus veniam nostrum error blanditiis amet, itaque
-                recusandae! Provident veniam eveniet tempora!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+                enim vel possimus quaerat ullam cumque, exercitationem,
+                doloribus dignissimos quis iure voluptatibus nisi voluptates
+                iste sunt dolor dolorum. Accusamus, sapiente consequatur?
               </p>
             </div>
           </div>
-          <!-- tsuchinoko -->
-          <svg
-            class="moving_tsuchinoko d-none d-lg-block"
-            height="400"
-            width="400"
-          >
-            <path
-              d="M 185.007 0.967 Q 86.55 5.756 83.721 76.956 C 83.721 129.812 52.232 128.688 11.747 150.055"
-              stroke="white"
-              stroke-width="5"
-            />
-            <!-- <img id="dancing-dog-gif" src="./_img/dancing-dog.gif" alt="" /> -->
-          </svg>
-        </div>
-        <!-- second paragraph -->
-        <div
-          class="d-flex flex-wrap justify-content-around mt-3 position-relative"
-        >
-          <div class="col-8 col-lg-5">
-            <div class="text-center">
-              <img
-                class="rounded-circle w-100"
-                src="https://picsum.photos/400/400?random=2"
-              />
+          <div class="row mx-0 justify-content-start mb-5">
+            <div class="col-9 px-0">
+              <div class="mb-3">
+                <img
+                  class="w-100"
+                  src="https://picsum.photos/400/400?random=15"
+                />
+              </div>
+            </div>
+            <div class="col-9">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+                enim vel possimus quaerat ullam cumque, exercitationem,
+                doloribus dignissimos quis iure voluptatibus nisi voluptates
+                iste sunt dolor dolorum. Accusamus, sapiente consequatur?
+              </p>
             </div>
           </div>
-          <div class="col-8 col-lg-5 d-flex">
-            <div class="align-self-center">
+          <div class="row mx-0 justify-content-end mb-5">
+            <div class="col-9 px-0">
+              <div class="mb-3">
+                <img
+                  class="w-100"
+                  src="https://picsum.photos/400/400?random=15"
+                />
+              </div>
+            </div>
+            <div class="col-9">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ratione voluptates ut rem vitae unde molestiae perferendis eius
-                vel possimus veniam nostrum error blanditiis amet, itaque
-                recusandae! Provident veniam eveniet tempora!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+                enim vel possimus quaerat ullam cumque, exercitationem,
+                doloribus dignissimos quis iure voluptatibus nisi voluptates
+                iste sunt dolor dolorum. Accusamus, sapiente consequatur?
               </p>
             </div>
           </div>
         </div>
-        <div class="d-flex flex-wrap justify-content-around">
-          <div class="col-8">
-            <div>
-              <img class="w-100" src="https://picsum.photos/600/400?random=1" />
+        <!-- LIVE VIDEO -->
+        <div id="live_section" class="">
+          <h1 class="fw-bolder text-center mb-3" style="font-size: 2.5rem">
+            LIVE
+          </h1>
+          <div class="row px-0 mx-0 justify-content-center">
+            <div class="videobox col-9">
+              <img class="w-100" src="https://picsum.photos/320/180?random=1" />
+
+              <i onclick="hello()" class="bi bi-play-circle-fill"></i>
+            </div>
+            <div class="videobox col-9">
+              <img class="w-100" src="https://picsum.photos/320/180?random=1" />
+
+              <i onclick="hello()" class="bi bi-play-circle-fill"></i>
+            </div>
+            <div class="videobox col-9">
+              <img class="w-100" src="https://picsum.photos/320/180?random=1" />
+
+              <i onclick="hello()" class="bi bi-play-circle-fill"></i>
             </div>
           </div>
-          <div class="col-10">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-              animi ipsa molestias earum, quaerat voluptate deleniti praesentium
-              vel quis perspiciatis maiores iusto culpa nulla reprehenderit quia
-              unde vitae ad laboriosam?
-            </p>
-          </div>
         </div>
-        <div class="animate__animated animate__slideInLeft">
-          <img src="https://picsum.photos/400/400?random=1" />
+        <!-- PICTures -->
+        <div class="picture_section">
+          <div class="overflow-scroll" style="max-width: 70vw">
+            <img src="https://picsum.photos/1200/300?random=1" />
+          </div>
         </div>
       </div>
     </main>

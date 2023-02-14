@@ -17,3 +17,7 @@ document.addEventListener("scroll", function () {
   // 根據未來位置做比較
   lastPos = currentPos;
 });
+
+function hello() {
+  console.log("hello matherfucker");
+}
