@@ -103,12 +103,32 @@ main {
     margin-top: 80px;
     width: 100%;
     background-color: aquamarine;
+    #banner_cover {
+      swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
+
+      swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+    }
+
     #banner_select {
+      display: flex;
       & > div {
         box-sizing: border-box;
+        border: 2px solid white;
         height: 2.5rem;
         width: 2.5rem;
         position: relative;
+
         &::after {
           content: "";
           transition: all 0.2s ease-in-out;
@@ -117,6 +137,7 @@ main {
           &::after {
             content: "";
             position: absolute;
+            box-sizing: border-box;
             height: 100%;
             width: 100%;
             border: 3px solid red;
@@ -151,6 +172,7 @@ main {
       }
     }
   }
+
   @keyframes move {
     100% {
       offset-distance: 100%;
@@ -159,5 +181,41 @@ main {
   #dancing-dog-gif {
     width: 100px;
     object-fit: cover;
+  }
+}
+footer {
+  margin-top: 200px;
+  min-height: 150px;
+  background-color: lightgray;
+  #contact_list {
+    & > div {
+      text-align: center;
+
+      button {
+        border: none;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        color: white;
+        background-image: url("../img/Polygon.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.25rem;
+        transition: all 0.3s ease-out;
+        i {
+          position: relative;
+          top: -0.25rem;
+        }
+        &:hover {
+          transform: scale(1.1);
+          // opacity: 0.7;
+
+          filter: drop-shadow(0 0 10px rgb(255, 199, 44));
+        }
+      }
+    }
   }
 }

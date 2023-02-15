@@ -18,6 +18,20 @@ document.addEventListener("scroll", function () {
   lastPos = currentPos;
 });
 
-function hello() {
-  console.log("hello matherfucker");
+// swiper
+const bannerSwiper = document.getElementById("banner_swiper");
+const params = {
+  pagination: {
+    clickable: true,
+  },
+};
+
+Object.assign(bannerSwiper, params);
+
+bannerSwiper.initialize();
+function changeBannerImg() {
+  console.dir(bannerSwiper);
+  // bannerSwiper.on("slideChange", function () {
+  //   console.log("slide changed");
+  // });
 }
