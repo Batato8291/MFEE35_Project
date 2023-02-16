@@ -102,72 +102,129 @@ main {
   .banner {
     margin-top: 80px;
     width: 100%;
-    background-color: aquamarine;
-    #banner_cover {
-      swiper-container {
-        width: 100%;
-        height: 100%;
-      }
 
-      swiper-slide {
-        background-position: center;
-        background-size: cover;
-      }
-
-      swiper-slide img {
-        display: block;
-        width: 100%;
-      }
+    #banner_cover img {
+      transition: opacity 0.4s ease-in-out;
     }
-
-    #banner_select {
+    #banner_thumbnails {
       display: flex;
-      & > div {
+      flex-direction: row;
+      .thumbnail {
         box-sizing: border-box;
-        border: 2px solid white;
-        height: 2.5rem;
-        width: 2.5rem;
+        // border: 2px solid white;
         position: relative;
-
-        &::after {
-          content: "";
-          transition: all 0.2s ease-in-out;
+        img {
+          box-sizing: border-box;
+          height: 2.5rem;
+          width: 2.5rem;
+          object-fit: cover;
+          border: 2px solid white;
+          transition: border 0.2s ease-in-out;
         }
         &.active {
-          &::after {
-            content: "";
-            position: absolute;
-            box-sizing: border-box;
-            height: 100%;
-            width: 100%;
-            border: 3px solid red;
-            top: 0;
-            left: 0;
+          img {
+            border: 2px solid red;
           }
         }
       }
     }
   }
-
+  #intro_selection {
+    margin-top: 70px;
+  }
   #live_section {
     .videobox {
-      box-sizing: border-box;
-      border: 5px solid lightpink;
-      position: relative;
       margin-bottom: 4rem;
-      i {
-        padding: 0;
-        margin: 0;
+      padding: 0.5rem;
+      position: relative;
+      .videobox_item {
+        box-sizing: border-box;
+        border: 5px solid white;
+        position: relative;
+
+        i {
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 3rem;
+          color: white;
+          transition: all 0.3s ease-in;
+          &:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            color: lightpink;
+          }
+        }
+      }
+      &.video_effect > span {
+        $video_effect_time: 0.5s;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 3rem;
-        color: white;
-        transition: all 0.3s ease-in;
-        &:hover {
-          transform: translate(-50%, -50%) scale(1.2);
-          color: lightpink;
+        display: block;
+        background-color: lightpink;
+        &:first-of-type {
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 0.5rem;
+          animation: video_ani1 $video_effect_time ease-in forwards;
+        }
+        &:nth-of-type(2) {
+          top: 0;
+          right: 50%;
+          width: 0;
+          height: 0.5rem;
+          animation: video_ani1 $video_effect_time ease-in forwards;
+        }
+        @keyframes video_ani1 {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 50%;
+          }
+        }
+        &:nth-of-type(3) {
+          top: 0;
+          left: 0%;
+          width: 0.5rem;
+          height: 0;
+          animation: video_ani2 $video_effect_time linear forwards;
+          animation-delay: $video_effect_time;
+        }
+        &:nth-of-type(4) {
+          top: 0;
+          right: 0%;
+          width: 0.5rem;
+          height: 0;
+          animation: video_ani2 $video_effect_time linear forwards;
+          animation-delay: $video_effect_time;
+        }
+
+        @keyframes video_ani2 {
+          0% {
+            height: 0;
+          }
+          100% {
+            height: 100%;
+          }
+        }
+        &:nth-of-type(5) {
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 0.5rem;
+          animation: video_ani1 $video_effect_time ease-out forwards;
+          animation-delay: $video_effect_time * 2;
+        }
+        &:nth-of-type(6) {
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 0.5rem;
+          animation: video_ani1 $video_effect_time ease-out forwards;
+          animation-delay: $video_effect_time * 2;
         }
       }
     }
@@ -205,6 +262,7 @@ footer {
         line-height: 50px;
         font-size: 1.25rem;
         transition: all 0.3s ease-out;
+
         i {
           position: relative;
           top: -0.25rem;

@@ -1,3 +1,5 @@
+import createCarousel from "./homeBanner.js";
+
 const homeNavbar = document.querySelector("#header");
 let lastPos = 0;
 
@@ -19,19 +21,19 @@ document.addEventListener("scroll", function () {
 });
 
 // swiper
-const bannerSwiper = document.getElementById("banner_swiper");
-const params = {
-  pagination: {
-    clickable: true,
-  },
-};
+createCarousel();
 
-Object.assign(bannerSwiper, params);
-
-bannerSwiper.initialize();
-function changeBannerImg() {
-  console.dir(bannerSwiper);
-  // bannerSwiper.on("slideChange", function () {
-  //   console.log("slide changed");
-  // });
+//live effect
+function liveVideoEffect() {
+  const videoBox = document.querySelector(".videobox");
+  const scrollPosition = window.scrollY;
+  const viewHeight = window.innerHeight;
+  const vbPositon = videoBox.offsetTop;
+  if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.2) {
+    videoBox.classList.add("video_effect");
+  } else {
+    videoBox.classList.remove("video_effect");
+  }
 }
+// liveVideoEffect();
+window.addEventListener("scroll", liveVideoEffect);

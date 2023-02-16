@@ -85,51 +85,44 @@ header {
 main .banner {
   margin-top: 80px;
   width: 100%;
-  background-color: aquamarine;
 }
-main .banner #banner_cover swiper-container {
-  width: 100%;
-  height: 100%;
+main .banner #banner_cover img {
+  transition: opacity 0.4s ease-in-out;
 }
-main .banner #banner_cover swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-main .banner #banner_cover swiper-slide img {
-  display: block;
-  width: 100%;
-}
-main .banner #banner_select {
+main .banner #banner_thumbnails {
   display: flex;
+  flex-direction: row;
 }
-main .banner #banner_select > div {
+main .banner #banner_thumbnails .thumbnail {
   box-sizing: border-box;
-  border: 2px solid white;
+  position: relative;
+}
+main .banner #banner_thumbnails .thumbnail img {
+  box-sizing: border-box;
   height: 2.5rem;
   width: 2.5rem;
-  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid white;
+  transition: border 0.2s ease-in-out;
 }
-main .banner #banner_select > div::after {
-  content: "";
-  transition: all 0.2s ease-in-out;
+main .banner #banner_thumbnails .thumbnail.active img {
+  border: 2px solid red;
 }
-main .banner #banner_select > div.active::after {
-  content: "";
-  position: absolute;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  border: 3px solid red;
-  top: 0;
-  left: 0;
+main #intro_selection {
+  margin-top: 70px;
 }
 main #live_section .videobox {
-  box-sizing: border-box;
-  border: 5px solid lightpink;
-  position: relative;
   margin-bottom: 4rem;
+  padding: 0.5rem;
+  position: relative;
 }
-main #live_section .videobox i {
+main #live_section .videobox .videobox_item {
+  box-sizing: border-box;
+  border: 5px solid white;
+  position: relative;
+}
+main #live_section .videobox .videobox_item i {
   padding: 0;
   margin: 0;
   position: absolute;
@@ -140,9 +133,76 @@ main #live_section .videobox i {
   color: white;
   transition: all 0.3s ease-in;
 }
-main #live_section .videobox i:hover {
+main #live_section .videobox .videobox_item i:hover {
   transform: translate(-50%, -50%) scale(1.2);
   color: lightpink;
+}
+main #live_section .videobox.video_effect > span {
+  position: absolute;
+  display: block;
+  background-color: lightpink;
+}
+main #live_section .videobox.video_effect > span:first-of-type {
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0.5rem;
+  animation: video_ani1 0.5s ease-in forwards;
+}
+main #live_section .videobox.video_effect > span:nth-of-type(2) {
+  top: 0;
+  right: 50%;
+  width: 0;
+  height: 0.5rem;
+  animation: video_ani1 0.5s ease-in forwards;
+}
+@keyframes video_ani1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+}
+main #live_section .videobox.video_effect > span:nth-of-type(3) {
+  top: 0;
+  left: 0%;
+  width: 0.5rem;
+  height: 0;
+  animation: video_ani2 0.5s linear forwards;
+  animation-delay: 0.5s;
+}
+main #live_section .videobox.video_effect > span:nth-of-type(4) {
+  top: 0;
+  right: 0%;
+  width: 0.5rem;
+  height: 0;
+  animation: video_ani2 0.5s linear forwards;
+  animation-delay: 0.5s;
+}
+@keyframes video_ani2 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+main #live_section .videobox.video_effect > span:nth-of-type(5) {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0.5rem;
+  animation: video_ani1 0.5s ease-out forwards;
+  animation-delay: 1s;
+}
+main #live_section .videobox.video_effect > span:nth-of-type(6) {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.5rem;
+  animation: video_ani1 0.5s ease-out forwards;
+  animation-delay: 1s;
 }
 @keyframes move {
   100% {

@@ -11,32 +11,70 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <style>
-      div {
-        width: 100vw;
-        height: 100vh;
+    <link rel="stylesheet" href="./css/Hometest.css" />
+    <!-- <style>
+      .content-container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 50px 0;
+        transition: all 1s ease;
       }
-      img {
-        display: block;
-        margin: 10vh auto;
+
+      .content-container.shadow {
+        animation: color-change 3s infinite alternate;
+        /* box-shadow: inset 0px 0px 100px #16e35a, inset 0px 0px 50px #c61919; */
       }
-    </style>
+      @keyframes color-change {
+        0% {
+          background-color: white;
+        }
+        100% {
+          background: radial-gradient(
+            circle at top center,
+            #ff1616 0%,
+            #ffffff 100%
+          );
+        }
+      }
+      .test-box {
+        height: 1500px;
+        width: 80%;
+        background-color: lightblue;
+      }
+    </style> -->
   </head>
   <body>
-    <div class="wow flash" data-wow-offset="100" data-wow-iteration="infinite">
-      <img src="https://picsum.photos/300/400?random=1" />
+    <div class="container_box">
+      <div class="videobox">
+        <div class="videobox_item">
+          <img
+            class=""
+            style="width: 100%"
+            src="https://picsum.photos/320/180?random=1"
+          />
+
+          <i onclick="hello()" class="bi bi-play-circle-fill"></i>
+        </div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <div class="wow flipInX" data-wow-offset="100" data-wow-iteration="5">
-      <img src="https://picsum.photos/300/400?random=2" />
-    </div>
-    <div class="wow hinge" data-wow-offset="100" data-wow-delay="3s">
-      <img src="https://picsum.photos/300/400?random=3" />
-    </div>
-    <div class="wow rollIn" data-wow-offset="100" data-wow-duration="3s">
-      <img src="https://picsum.photos/300/400?random=4" />
-    </div>
+
     <script>
-      new WOW().init();
+      // const contentContainer = document.querySelector(".content-container");
+
+      // window.addEventListener("scroll", () => {
+      //   console.log(window.scrollY);
+      //   if (window.scrollY > 1000) {
+      //     contentContainer.classList.add("shadow");
+      //   } else {
+      //     contentContainer.classList.remove("shadow");
+      //   }
+      // });
     </script>
   </body>
 </html>
