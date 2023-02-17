@@ -25,15 +25,45 @@ createCarousel();
 
 //live effect
 function liveVideoEffect() {
-  const videoBox = document.querySelector(".videobox");
-  const scrollPosition = window.scrollY;
   const viewHeight = window.innerHeight;
-  const vbPositon = videoBox.offsetTop;
-  if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.2) {
-    videoBox.classList.add("video_effect");
-  } else {
-    videoBox.classList.remove("video_effect");
-  }
+  const videoBoxs = document.querySelectorAll(".videobox");
+  const scrollPosition = window.scrollY;
+  videoBoxs.forEach((box) => {
+    const vbPositon = box.offsetTop;
+    if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.1) {
+      box.classList.add("video_effect");
+    } else {
+      box.classList.remove("video_effect");
+    }
+  });
 }
+//moving Bocchi
+
+let isScrolling = false;
+let lastScrollPos = 0;
+console.log("win", window.pageYOffset);
+window.addEventListener("scroll", function () {
+  isScrolling = true;
+  // console.log("scroll!!", isScrolling);
+});
+setInterval(() => {
+  if (isScrolling) {
+    const currentScrollPos = window.pageYOffset;
+    console.log(lastScrollPos);
+    console.log(currentScrollPos);
+    const movingItem = document.querySelector(".moving_item");
+
+    if (currentScrollPos != lastScrollPos) {
+      // in moving
+      movingItem.classList.add("moving");
+    } else {
+      // in static
+      movingItem.classList.remove("moving");
+    }
+    lastScrollPos = currentScrollPos;
+    isScrolling = false;
+  }
+}, 100);
+
 // liveVideoEffect();
 window.addEventListener("scroll", liveVideoEffect);
