@@ -1,9 +1,7 @@
-import createCarousel from "./homeBanner.js";
-
 const homeNavbar = document.querySelector("#header");
 let lastPos = 0;
 
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", function() {
   let currentPos = window.scrollY;
   const selectList = document.querySelector("#slide_selects");
   const selectBtn = document.querySelector("#select_btn");
@@ -20,15 +18,12 @@ document.addEventListener("scroll", function () {
   lastPos = currentPos;
 });
 
-// swiper
-createCarousel();
-
 //live effect
 function liveVideoEffect() {
   const viewHeight = window.innerHeight;
   const videoBoxs = document.querySelectorAll(".videobox");
   const scrollPosition = window.scrollY;
-  videoBoxs.forEach((box) => {
+  videoBoxs.forEach(box => {
     const vbPositon = box.offsetTop;
     if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.1) {
       box.classList.add("video_effect");
@@ -37,31 +32,31 @@ function liveVideoEffect() {
     }
   });
 }
-//moving Bocchi
+function hello(name) {
+  console.log("play video~a", name);
+}
 
+//moving Bocchi
 let isScrolling = false;
 let lastScrollPos = 0;
-console.log("win", window.pageYOffset);
-window.addEventListener("scroll", function () {
+const movingItem = document.querySelector(".moving_item");
+window.addEventListener("scroll", function() {
   isScrolling = true;
-  // console.log("scroll!!", isScrolling);
 });
 setInterval(() => {
   if (isScrolling) {
     const currentScrollPos = window.pageYOffset;
-    console.log(lastScrollPos);
-    console.log(currentScrollPos);
-    const movingItem = document.querySelector(".moving_item");
-
-    if (currentScrollPos != lastScrollPos) {
-      // in moving
-      movingItem.classList.add("moving");
+    // console.log("win", window.pageYOffset, "last", lastScrollPos);
+    if (lastScrollPos > currentScrollPos) {
+      movingItem.style.transform = "rotateY(180deg)";
     } else {
-      // in static
-      movingItem.classList.remove("moving");
+      movingItem.style.transform = "";
     }
+    movingItem.classList.add("moving");
     lastScrollPos = currentScrollPos;
     isScrolling = false;
+  } else {
+    movingItem.classList.remove("moving");
   }
 }, 100);
 
