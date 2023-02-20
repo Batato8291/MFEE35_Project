@@ -1,7 +1,8 @@
+// navbar effect
 const homeNavbar = document.querySelector("#header");
 let lastPos = 0;
 
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", function() {
   let currentPos = window.scrollY;
   const selectList = document.querySelector("#slide_selects");
   const selectBtn = document.querySelector("#select_btn");
@@ -18,12 +19,30 @@ document.addEventListener("scroll", function () {
   lastPos = currentPos;
 });
 
+// intro effect
+function addAnimate(targetEl, bottomDistance, className) {
+  window.addEventListener("scroll", function() {
+    const viewHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const taEl = document.querySelector(targetEl);
+    const taElPos = taEl.offsetTop;
+    if (scrollPosition + viewHeight >= taElPos + viewHeight * bottomDistance) {
+      taEl.classList.add("animate__animated", className);
+    } else {
+      taEl.classList.remove("animate__animated", className);
+    }
+  });
+}
+addAnimate("#intro1", 0.05, "animate__fadeInUp");
+addAnimate("#intro2", 0.05, "animate__fadeInLeft");
+addAnimate("#intro3", 0.05, "animate__fadeInRight");
+
 //live effect
 function liveVideoEffect() {
   const viewHeight = window.innerHeight;
   const videoBoxs = document.querySelectorAll(".videobox");
   const scrollPosition = window.scrollY;
-  videoBoxs.forEach((box) => {
+  videoBoxs.forEach(box => {
     const vbPositon = box.offsetTop;
     if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.1) {
       box.classList.add("video_effect");
@@ -40,7 +59,7 @@ let lastScrollPos = 0;
 //        Bocchi DOM
 const movingItem = document.querySelector(".moving_item");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
   isScrolling = true;
 });
 setInterval(() => {
@@ -67,7 +86,7 @@ function hello(name) {
 // moveing item reaction
 
 function movingItemPath(targetEl, referenceEl, option) {
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", function() {
     let scrollPosition =
       window.pageYOffset || document.documentElement.scrollTop;
     const viewHeight = window.innerHeight;
@@ -75,17 +94,17 @@ function movingItemPath(targetEl, referenceEl, option) {
     const taEl = document.querySelector(targetEl);
     const taElPos = taEl.getBoundingClientRect();
     const refElPos = document.querySelector(referenceEl).offsetTop;
-
+    console.log(taElPos);
     if (option === "start") {
-      // console.log("ta", scrollPosition + taElPos.top, "ref", refElPos);
+      // console.log("ta", scrollPosition + taElPos.top, "ref", refElPos + 100);
       if (scrollPosition + taElPos.top <= refElPos + 100) {
         taEl.classList.add("hide");
       } else {
         taEl.classList.remove("hide");
       }
     } else if (option === "turnLeft") {
-      console.log("ta", scrollPosition + taElPos.top, "ref", refElPos);
-      console.log(refElPos);
+      // console.log("ta", scrollPosition + taElPos.top, "ref", refElPos);
+      // console.log(refElPos);
       if (
         scrollPosition + taElPos.top >= refElPos - 150 &&
         scrollPosition + taElPos.top <= refElPos + 50
@@ -98,4 +117,4 @@ function movingItemPath(targetEl, referenceEl, option) {
   });
 }
 movingItemPath(".moving_item", "#intro_selection", "start");
-movingItemPath(".moving_box", "#intro_selection .turn_left", "turnLeft");
+// movingItemPath(".moving_box", "#intro_selection .turn_left", "turnLeft");

@@ -99,6 +99,7 @@ header {
 }
 
 main {
+  // position: relative;
   .banner {
     margin-top: 80px;
     width: 100%;
@@ -230,16 +231,39 @@ main {
     }
   }
 
+  #picture_section {
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   .moving_box {
     $--box-size: 20vw;
+    z-index: 10;
     position: fixed;
-    right: 1%;
+    right: 1vw;
     bottom: 10%;
     width: $--box-size;
     height: $--box-size;
     transform: rotate(-90deg);
-    display: flex;
-    align-items: end;
+    // display: flex;
+    // align-items: end;
 
     .moving_item {
       height: 100%;
@@ -271,11 +295,11 @@ main {
         height: $--box-size * 0.2;
       }
     }
-    &.turn-left {
-      transform: rotate(0);
+    // &.turn-left {
+    //   transform: rotate(0);
 
-      animation: move_bocchi 2s linear infinite;
-    }
+    //   animation: move_bocchi 2s linear infinite;
+    // }
   }
 
   @keyframes move_bocchi {

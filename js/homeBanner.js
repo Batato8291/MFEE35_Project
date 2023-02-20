@@ -2,23 +2,39 @@ function createCarousel() {
   const thumbnails = document.querySelectorAll(".thumbnail");
   const mainImage = document.querySelector("#banner_cover img");
 
-  thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener("click", () => {
-      // 主圖透明
-      mainImage.style.opacity = 0.5;
-      // 移除其它縮圖上的 active class
-      thumbnails.forEach(t => {
-        t.classList.remove("active");
-      });
-      const img = thumbnail.querySelector("img");
-      // 為當前縮圖添加 active class
-      thumbnail.classList.add("active");
-      const imgSrc = img.getAttribute("src");
-      setTimeout(() => {
-        mainImage.setAttribute("src", imgSrc);
-        mainImage.style.opacity = 1;
-      }, 200);
+  // change slide
+  let currentThumbnail = 0;
+  function changeSlide(n) {
+    // 主圖透明
+    mainImage.style.opacity = 0.5;
+    thumbnails[currentThumbnail].classList.remove("active");
+    thumbnails[n].classList.add("active");
+    const img = thumbnails[n].querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    setTimeout(() => {
+      mainImage.setAttribute("src", imgSrc);
+      mainImage.style.opacity = 1;
+    }, 200);
+    currentThumbnail = n;
+  }
+
+  // next slide
+  function nextThumbnail() {
+    let next =
+      currentThumbnail + 1 < thumbnails.length ? currentThumbnail + 1 : 0;
+    changeSlide(next);
+  }
+
+  thumbnails.forEach((thumbnail, thumbnailIndex) => {
+    thumbnail.addEventListener("click", function() {
+      const index = thumbnailIndex;
+
+      changeSlide(index);
+      clearInterval(changeTimer);
+      changeTimer = setInterval(nextThumbnail, 5000);
     });
   });
+  let changeTimer = setInterval(nextThumbnail, 5000);
 }
+
 createCarousel();
