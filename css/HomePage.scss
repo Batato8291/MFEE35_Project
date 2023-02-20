@@ -250,9 +250,20 @@ main {
       background-repeat: no-repeat;
       position: relative;
 
+      transition-property: rotate, scale;
+      transition-duration: 0.1s, 0.5s;
+      transition-timing-function: ease-in-out, ease-in-out;
+      transform-origin: bottom center;
+      &.up {
+        rotate: y 180deg;
+      }
+      &.hide {
+        scale: 0.001;
+      }
       &.moving {
         background-image: url(../img/tsuchinoko.gif);
       }
+
       .moving_item_touch {
         position: absolute;
         bottom: 0;
@@ -260,8 +271,24 @@ main {
         height: $--box-size * 0.2;
       }
     }
+    &.turn-left {
+      transform: rotate(0);
+
+      animation: move_bocchi 2s linear infinite;
+    }
   }
 
+  @keyframes move_bocchi {
+    0% {
+      // transform: translateX(0px) translateY(0px);
+    }
+    100% {
+      // transform: translateX(150px) translateY(150px);
+      offset-path: path(
+        "M 185.007 0.967 Q 110.628 20.859 83.26 80.155 C 61.367 143.099 40.385 104.785 11.747 150.055"
+      );
+    }
+  }
   @keyframes move {
     100% {
       offset-distance: 100%;
