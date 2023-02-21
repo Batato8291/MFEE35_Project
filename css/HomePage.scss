@@ -114,6 +114,7 @@ main {
         box-sizing: border-box;
         // border: 2px solid white;
         position: relative;
+        cursor: pointer;
         img {
           box-sizing: border-box;
           height: 2.5rem;
@@ -132,6 +133,17 @@ main {
   }
   #intro_selection {
     margin-top: 70px;
+    .fade_in_right {
+      animation-name: fade_in_test;
+    }
+    @keyframes fade_in_test {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
   #live_section {
     .videobox {
@@ -142,7 +154,7 @@ main {
         box-sizing: border-box;
         border: 5px solid white;
         position: relative;
-
+        cursor: pointer;
         i {
           padding: 0;
           margin: 0;
@@ -153,10 +165,10 @@ main {
           font-size: 3rem;
           color: white;
           transition: all 0.3s ease-in;
-          &:hover {
-            transform: translate(-50%, -50%) scale(1.2);
-            color: lightpink;
-          }
+        }
+        &:hover i {
+          transform: translate(-50%, -50%) scale(1.2);
+          color: lightpink;
         }
       }
       &.video_effect > span {
@@ -230,7 +242,20 @@ main {
       }
     }
   }
+  .modal {
+    .modal-content {
+      background-color: black;
+      .modal-body {
+        display: flex;
+        align-items: center;
 
+        iframe {
+          width: 100%;
+          height: 56vw;
+        }
+      }
+    }
+  }
   #picture_section {
     swiper-container {
       width: 100%;
@@ -253,12 +278,27 @@ main {
       object-fit: cover;
     }
   }
+
+  #sns_section {
+    h1 {
+      padding: 0 40px;
+    }
+    .sns_box {
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      #twitter-widget-0 {
+        width: 100% !important;
+      }
+    }
+  }
+
   .moving_box {
     $--box-size: 20vw;
     z-index: 10;
     position: fixed;
     right: 1vw;
-    bottom: 10%;
+    bottom: 20%;
     width: $--box-size;
     height: $--box-size;
     transform: rotate(-90deg);
@@ -323,7 +363,26 @@ main {
     object-fit: cover;
   }
 }
-
+@media (min-width: 992px) {
+  main {
+    .banner {
+      margin-top: 100px;
+      display: flex;
+      justify-content: left;
+      #banner_cover {
+        width: 40vw;
+      }
+      #banner_thumbnails {
+        flex-direction: column;
+        justify-content: end;
+        .thumbnail img {
+          height: 8vw;
+          width: 8vw;
+        }
+      }
+    }
+  }
+}
 // footer
 
 footer {

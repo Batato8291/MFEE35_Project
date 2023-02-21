@@ -2,7 +2,7 @@
 const homeNavbar = document.querySelector("#header");
 let lastPos = 0;
 
-document.addEventListener("scroll", function() {
+document.addEventListener("scroll", function () {
   let currentPos = window.scrollY;
   const selectList = document.querySelector("#slide_selects");
   const selectBtn = document.querySelector("#select_btn");
@@ -21,7 +21,7 @@ document.addEventListener("scroll", function() {
 
 // intro effect
 function addAnimate(targetEl, bottomDistance, className) {
-  window.addEventListener("scroll", function() {
+  window.addEventListener("scroll", function () {
     const viewHeight = window.innerHeight;
     const scrollPosition = window.scrollY;
     const taEl = document.querySelector(targetEl);
@@ -35,14 +35,14 @@ function addAnimate(targetEl, bottomDistance, className) {
 }
 addAnimate("#intro1", 0.05, "animate__fadeInUp");
 addAnimate("#intro2", 0.05, "animate__fadeInLeft");
-addAnimate("#intro3", 0.05, "animate__fadeInRight");
+addAnimate("#intro3", 0.05, "fade_in_right");
 
 //live effect
 function liveVideoEffect() {
   const viewHeight = window.innerHeight;
   const videoBoxs = document.querySelectorAll(".videobox");
   const scrollPosition = window.scrollY;
-  videoBoxs.forEach(box => {
+  videoBoxs.forEach((box) => {
     const vbPositon = box.offsetTop;
     if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.1) {
       box.classList.add("video_effect");
@@ -52,14 +52,24 @@ function liveVideoEffect() {
   });
 }
 window.addEventListener("scroll", liveVideoEffect);
+addAnimate("#live_section", 0.05, "animate__fadeIn");
+//   live modal
+function openVideoModal(e) {
+  const videoUrl = e.dataset.videoUrl;
+  const modalVideoEl = document.querySelector("#live_video");
+  modalVideoEl.src = videoUrl;
+}
 
+// picture zoom
+function picZoom(e) {}
+addAnimate("#picture_section", 0.05, "animate__fadeIn");
 //moving Bocchi
 let isScrolling = false;
 let lastScrollPos = 0;
 //        Bocchi DOM
 const movingItem = document.querySelector(".moving_item");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   isScrolling = true;
 });
 setInterval(() => {
@@ -86,7 +96,7 @@ function hello(name) {
 // moveing item reaction
 
 function movingItemPath(targetEl, referenceEl, option) {
-  window.addEventListener("scroll", function() {
+  window.addEventListener("scroll", function () {
     let scrollPosition =
       window.pageYOffset || document.documentElement.scrollTop;
     const viewHeight = window.innerHeight;
@@ -94,7 +104,7 @@ function movingItemPath(targetEl, referenceEl, option) {
     const taEl = document.querySelector(targetEl);
     const taElPos = taEl.getBoundingClientRect();
     const refElPos = document.querySelector(referenceEl).offsetTop;
-    console.log(taElPos);
+    // console.log(taElPos);
     if (option === "start") {
       // console.log("ta", scrollPosition + taElPos.top, "ref", refElPos + 100);
       if (scrollPosition + taElPos.top <= refElPos + 100) {

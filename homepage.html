@@ -90,7 +90,7 @@
     <main>
       <!-- banner -->
       <div class="banner">
-        <div id="banner_cover">
+        <div id="banner_cover" class="order-lg-2">
           <img class="w-100" src="https://picsum.photos/400/400?random=1" />
         </div>
         <div id="banner_thumbnails">
@@ -111,13 +111,15 @@
         id="intro_selection"
         class="pt-2 d-flex flex-wrap justify-content-center"
       >
-        <div class="col-12 fs-2 fw-bold mb-4 mt-2 px-4 d-flex flex-wrap">
-          <div class="col-12">INTRO</div>
-          <div class="col-12">DUCTION</div>
+        <div
+          class="col-12 fs-2 fs-lg-1 fw-bold mb-4 mt-2 px-4 d-flex flex-wrap"
+        >
+          <div class="col-12 col-lg-auto">INTRO</div>
+          <div class="col-12 col-lg-auto">DUCTION</div>
         </div>
         <!-- intro-items -->
         <div class="row mx-0 justify-content-center mb-5" id="intro1">
-          <div class="col-9">
+          <div class="col-9 col-lg-4 order-lg-2">
             <div class="mb-3">
               <img
                 class="w-100 rounded-circle"
@@ -125,7 +127,7 @@
               />
             </div>
           </div>
-          <div class="col-9">
+          <div class="col-9 col-lg-4">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
               enim vel possimus quaerat ullam cumque, exercitationem, doloribus
@@ -138,7 +140,7 @@
           class="row mx-0 justify-content-start mb-5 animate__fast"
           id="intro2"
         >
-          <div class="col-9 px-0">
+          <div class="col-9 px-0 col-lg-4">
             <div class="mb-3">
               <img
                 class="w-100"
@@ -146,7 +148,7 @@
               />
             </div>
           </div>
-          <div class="col-9">
+          <div class="col-9 col-lg-4">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
               enim vel possimus quaerat ullam cumque, exercitationem, doloribus
@@ -159,7 +161,7 @@
           class="row mx-0 justify-content-end mb-5 animate__fast"
           id="intro3"
         >
-          <div class="col-9 px-0">
+          <div class="col-9 px-0 col-lg-4 order-lg-2">
             <div class="mb-3">
               <img
                 class="w-100"
@@ -167,7 +169,7 @@
               />
             </div>
           </div>
-          <div class="col-9">
+          <div class="col-9 col-lg-4">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
               enim vel possimus quaerat ullam cumque, exercitationem, doloribus
@@ -183,14 +185,17 @@
             LIVE
           </h1>
           <div class="row px-0 mx-0 justify-content-center">
-            <div class="col-9 videobox">
-              <div class="videobox_item">
-                <img
-                  class="w-100"
-                  src="https://picsum.photos/320/180?random=1"
-                />
+            <div class="col-9 col-lg-3 videobox mx-lg-3">
+              <div
+                class="videobox_item"
+                onclick="openVideoModal(this)"
+                data-video-url="https://www.youtube.com/embed/fJh5UeiULZs"
+                data-bs-toggle="modal"
+                data-bs-target="#live_modal"
+              >
+                <img class="w-100" src="./img/kitakita.webp" alt="" />
 
-                <i onclick="hello(222)" class="bi bi-play-circle-fill"></i>
+                <i class="bi bi-play-circle-fill"></i>
               </div>
               <span></span>
               <span></span>
@@ -199,14 +204,17 @@
               <span></span>
               <span></span>
             </div>
-            <div class="col-9 videobox">
-              <div class="videobox_item">
-                <img
-                  class="w-100"
-                  src="https://picsum.photos/320/180?random=1"
-                />
+            <div class="col-9 col-lg-3 videobox mx-lg-3">
+              <div
+                class="videobox_item"
+                onclick="openVideoModal(this)"
+                data-video-url="https://www.youtube.com/embed/5R9Hy3cDAxM"
+                data-bs-toggle="modal"
+                data-bs-target="#live_modal"
+              >
+                <img class="w-100" src="./img/mumumumu.gif" />
 
-                <i onclick="hello()" class="bi bi-play-circle-fill"></i>
+                <i class="bi bi-play-circle-fill"></i>
               </div>
               <span></span>
               <span></span>
@@ -215,14 +223,17 @@
               <span></span>
               <span></span>
             </div>
-            <div class="col-9 videobox">
-              <div class="videobox_item">
-                <img
-                  class="w-100"
-                  src="https://picsum.photos/320/180?random=1"
-                />
+            <div class="col-9 col-lg-3 videobox mx-lg-3">
+              <div
+                class="videobox_item"
+                onclick="openVideoModal(this)"
+                data-video-url="https://www.youtube-nocookie.com/embed/2horERMAPt4"
+                data-bs-toggle="modal"
+                data-bs-target="#live_modal"
+              >
+                <img class="w-100" src="./img/cyberchosisBocchi.gif" />
 
-                <i onclick="hello()" class="bi bi-play-circle-fill"></i>
+                <i class="bi bi-play-circle-fill"></i>
               </div>
               <span></span>
               <span></span>
@@ -232,12 +243,32 @@
               <span></span>
             </div>
           </div>
+          <!-- live modal -->
+          <div class="modal fade" id="live_modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered m-0">
+              <div class="modal-content rounded-0">
+                <div class="modal-body p-1">
+                  <iframe
+                    id="live_video"
+                    width="640"
+                    height="360"
+                    src=""
+                    title="YouTube video player"
+                    frameborder="0"
+                    allowfullscreen
+                    allow="autoplay;encrypted-media;"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- PICTures -->
-        <div id="picture_section" class="w-100 mb-3">
+        <div id="picture_section" class="w-100 mb-5">
           <h1 class="fw-bolder mb-3 fs-2 mx-3 px-4">Picture --</h1>
-          <div class="overflow-scroll" style="max-width: 100%">
+          <div class="" style="max-width: 100%">
             <swiper-container
+              id="pic_box"
               class="mySwiper"
               pagination="false"
               slides-per-view="1.5"
@@ -245,17 +276,21 @@
               centered-slides="true"
               loop="true"
               data-swiper-initial-slide="3"
+              zoom="true"
             >
               <swiper-slide>
                 <img src="https://picsum.photos/320/180?random=1" alt="" />
               </swiper-slide>
-              <swiper-slide>
+              <swiper-slide onclick="picZoom(this)">
                 <img src="https://picsum.photos/320/180?random=2" alt=""
               /></swiper-slide>
-              <swiper-slide>
+              <swiper-slide
+                onclick="picZoom(this)"
+                style="border: 2px solid red"
+              >
                 <img src="https://picsum.photos/320/180?random=3" alt=""
               /></swiper-slide>
-              <swiper-slide>
+              <swiper-slide onclick="picZoom(this)">
                 <img src="https://picsum.photos/320/180?random=4" alt=""
               /></swiper-slide>
               <swiper-slide>
@@ -268,10 +303,25 @@
           </div>
         </div>
         <!-- SNS -->
-        <div id="sns_section">
-          <h1 class="fw-bolder mb-3 fs-2 mx-3 px-4">SNS ~~</h1>
-          <div class="px-5">
-            <img class="w-100" src="https://picsum.photos/400/600?random=1" />
+        <div
+          id="sns_section"
+          class="d-flex flex-wrap justify-content-center my-5"
+        >
+          <h1 class="fw-bolder mb-3 fs-2 col-12">SNS ~~</h1>
+          <div class="sns_box col-10">
+            <!-- <a
+              class="twitter-timeline"
+              data-lang="zh-tw"
+              data-width="300"
+              data-height="500"
+              href="https://twitter.com/guitarhero_0221?ref_src=twsrc%5Etfw"
+              >Tweets by guitarhero_0221</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script> -->
           </div>
         </div>
       </div>
