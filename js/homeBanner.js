@@ -1,7 +1,9 @@
 function createCarousel() {
   const thumbnails = document.querySelectorAll(".thumbnail");
   const mainImage = document.querySelector("#banner_cover img");
-
+  // const banner = document.querySelector("#banner");
+  const bannerBk = document.querySelector(".banner_background");
+  console.log(bannerBk);
   // change slide
   let currentThumbnail = 0;
   function changeSlide(n) {
@@ -11,8 +13,10 @@ function createCarousel() {
     thumbnails[n].classList.add("active");
     const img = thumbnails[n].querySelector("img");
     const imgSrc = img.getAttribute("src");
+
     setTimeout(() => {
       mainImage.setAttribute("src", imgSrc);
+      bannerBk.style.backgroundImage = `url(.${imgSrc})`;
       mainImage.style.opacity = 1;
     }, 200);
     currentThumbnail = n;

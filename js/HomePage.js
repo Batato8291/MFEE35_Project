@@ -1,8 +1,14 @@
+// loading Ani
+// setTimeout(() => {
+//   const loadingBox = document.querySelector("#loading-box");
+
+//   loadingBox.style.display = "none";
+// }, 5000);
 // navbar effect
 const homeNavbar = document.querySelector("#header");
 let lastPos = 0;
 
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", function() {
   let currentPos = window.scrollY;
   const selectList = document.querySelector("#slide_selects");
   const selectBtn = document.querySelector("#select_btn");
@@ -21,7 +27,7 @@ document.addEventListener("scroll", function () {
 
 // intro effect
 function addAnimate(targetEl, bottomDistance, className) {
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", function() {
     const viewHeight = window.innerHeight;
     const scrollPosition = window.scrollY;
     const taEl = document.querySelector(targetEl);
@@ -42,7 +48,7 @@ function liveVideoEffect() {
   const viewHeight = window.innerHeight;
   const videoBoxs = document.querySelectorAll(".videobox");
   const scrollPosition = window.scrollY;
-  videoBoxs.forEach((box) => {
+  videoBoxs.forEach(box => {
     const vbPositon = box.offsetTop;
     if (scrollPosition + viewHeight >= vbPositon + viewHeight * 0.1) {
       box.classList.add("video_effect");
@@ -63,13 +69,32 @@ function openVideoModal(e) {
 // picture zoom
 function picZoom(e) {}
 addAnimate("#picture_section", 0.05, "animate__fadeIn");
+let mySwiper = new Swiper(".mySwiper", {
+  slidesPerView: 1.5,
+  spaceBetween: 10,
+
+  breakpoints: {
+    768: {
+      //当屏幕宽度大于等于768
+      slidesPerView: 3,
+      spaceBetween: 20
+    },
+    1280: {
+      //当屏幕宽度大于等于1280
+      slidesPerView: 4,
+      spaceBetween: 30
+    }
+  }
+});
+
 //moving Bocchi
 let isScrolling = false;
 let lastScrollPos = 0;
+
 //        Bocchi DOM
 const movingItem = document.querySelector(".moving_item");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
   isScrolling = true;
 });
 setInterval(() => {
@@ -96,7 +121,7 @@ function hello(name) {
 // moveing item reaction
 
 function movingItemPath(targetEl, referenceEl, option) {
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", function() {
     let scrollPosition =
       window.pageYOffset || document.documentElement.scrollTop;
     const viewHeight = window.innerHeight;

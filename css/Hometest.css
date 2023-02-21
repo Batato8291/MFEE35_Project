@@ -1,7 +1,11 @@
 .container_box {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .videobox {
@@ -11,45 +15,67 @@
   padding: 0.5rem;
   position: relative;
 }
+
 .videobox .videobox_item {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 5px solid lightpink;
   position: relative;
 }
+
 .videobox .videobox_item i {
   padding: 0;
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: 3rem;
   color: white;
+  -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
+
 .videobox .videobox_item i:hover {
-  transform: translate(-50%, -50%) scale(1.2);
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
   color: lightpink;
 }
+
 .videobox > span {
   position: absolute;
   display: block;
   background-color: lightpink;
 }
+
 .videobox > span:first-of-type {
   top: 0;
   left: 50%;
   width: 0;
   height: 0.5rem;
-  animation: video_ani1 1s linear forwards;
+  -webkit-animation: video_ani1 1s linear forwards;
+          animation: video_ani1 1s linear forwards;
 }
+
 .videobox > span:nth-of-type(2) {
   top: 0;
   right: 50%;
   width: 0;
   height: 0.5rem;
-  animation: video_ani1 1s linear forwards;
+  -webkit-animation: video_ani1 1s linear forwards;
+          animation: video_ani1 1s linear forwards;
 }
+
+@-webkit-keyframes video_ani1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
 @keyframes video_ani1 {
   0% {
     width: 0;
@@ -58,22 +84,38 @@
     width: 50%;
   }
 }
+
 .videobox > span:nth-of-type(3) {
   top: 0;
   left: 0%;
   width: 0.5rem;
   height: 0;
-  animation: video_ani2 1s linear forwards;
-  animation-delay: 1s;
+  -webkit-animation: video_ani2 1s linear forwards;
+          animation: video_ani2 1s linear forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
+
 .videobox > span:nth-of-type(4) {
   top: 0;
   right: 0%;
   width: 0.5rem;
   height: 0;
-  animation: video_ani2 1s linear forwards;
-  animation-delay: 1s;
+  -webkit-animation: video_ani2 1s linear forwards;
+          animation: video_ani2 1s linear forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
+
+@-webkit-keyframes video_ani2 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
 @keyframes video_ani2 {
   0% {
     height: 0;
@@ -82,19 +124,26 @@
     height: 100%;
   }
 }
+
 .videobox > span:nth-of-type(5) {
   bottom: 0;
   right: 0;
   width: 0;
   height: 0.5rem;
-  animation: video_ani1 1s linear forwards;
-  animation-delay: 2s;
+  -webkit-animation: video_ani1 1s linear forwards;
+          animation: video_ani1 1s linear forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
+
 .videobox > span:nth-of-type(6) {
   bottom: 0;
   left: 0;
   width: 0;
   height: 0.5rem;
-  animation: video_ani1 1s linear forwards;
-  animation-delay: 2s;
-}/*# sourceMappingURL=HomeTest.css.map */
+  -webkit-animation: video_ani1 1s linear forwards;
+          animation: video_ani1 1s linear forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+/*# sourceMappingURL=HomeTest.css.map */

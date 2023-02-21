@@ -30,11 +30,18 @@
   </head>
 
   <body>
+    <!-- <div id="loading-box">
+      <div id="loading-icon">
+        <img src="./img/Kessoku_Band_Logo.svg" alt="" />
+      </div>
+    </div> -->
     <header id="header">
       <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
         <div class="w-100">
           <div class="nav_head">
-            <a class="navbar-brand me-auto me-lg-0 col-lg-1" href="#">Navbar</a>
+            <a class="navbar-brand me-auto me-lg-0 col-lg-1 ps-lg-4" href="#"
+              ><img src="./img/Kessoku_Band_Logo.svg" alt=""
+            /></a>
             <div class="d-none d-lg-flex justify-content-lg-around col-lg-11">
               <div class="nav-item">
                 <a href="#" class="nav-link">option 1</a>
@@ -89,19 +96,42 @@
     </header>
     <main>
       <!-- banner -->
-      <div class="banner">
+      <div class="banner" id="banner">
+        <div class="backfiliter"></div>
+        <div class="banner_background"></div>
         <div id="banner_cover" class="order-lg-2">
-          <img class="w-100" src="https://picsum.photos/400/400?random=1" />
+          <img class="w-100" src="./img/album1.jpg" />
         </div>
-        <div id="banner_thumbnails">
-          <div data-img="image1.jpg" class="thumbnail active">
-            <img src="https://picsum.photos/400/400?random=1" />
+        <div id="banner_thumbnails" class="order-lg-1">
+          <div data-img="album1.jpg" class="thumbnail active">
+            <img src="./img/album1.jpg" />
           </div>
-          <div data-img="image2.jpg" class="thumbnail">
-            <img src="https://picsum.photos/400/400?random=2" />
+          <div data-img="album2.jpg" class="thumbnail">
+            <img src="./img/album2.jpg" />
           </div>
           <div data-img="image3.jpg" class="thumbnail">
-            <img src="https://picsum.photos/400/400?random=3" />
+            <img src="./img/album3.jpg" />
+          </div>
+          <div data-img="image4.jpg" class="thumbnail">
+            <img src="./img/album4.jpg" />
+          </div>
+          <div data-img="image5.jpg" class="thumbnail">
+            <img src="./img/album5.jpg" />
+          </div>
+          <div data-img="image6.jpg" class="thumbnail">
+            <img src="./img/album6.jpg" />
+          </div>
+          <div data-img="image7.jpg" class="thumbnail">
+            <img src="./img/album7.jpg" />
+          </div>
+          <div data-img="image8.jpg" class="thumbnail">
+            <img src="./img/album8.jpg" />
+          </div>
+          <div data-img="image9.jpg" class="thumbnail">
+            <img src="./img/album9.jpg" />
+          </div>
+          <div data-img="image10.jpg" class="thumbnail">
+            <img src="./img/album10.jpg" />
           </div>
         </div>
       </div>
@@ -112,84 +142,75 @@
         class="pt-2 d-flex flex-wrap justify-content-center"
       >
         <div
-          class="col-12 fs-2 fs-lg-1 fw-bold mb-4 mt-2 px-4 d-flex flex-wrap"
+          class="col-12 col-lg-10 mb-4 mt-2 px-4 d-flex flex-wrap intro-title"
         >
           <div class="col-12 col-lg-auto">INTRO</div>
           <div class="col-12 col-lg-auto">DUCTION</div>
         </div>
         <!-- intro-items -->
-        <div class="row mx-0 justify-content-center mb-5" id="intro1">
-          <div class="col-9 col-lg-4 order-lg-2">
+        <div
+          class="col-lg-10 row mx-0 justify-content-center mt-2 mt-lg-5"
+          id="intro1"
+        >
+          <div class="col-9 col-lg-4 order-lg-2 ms-lg-5">
             <div class="mb-3">
               <img
                 class="w-100 rounded-circle"
-                src="https://picsum.photos/400/400?random=15"
+                style="object-fit: cover"
+                src="./img/intro2.png"
               />
             </div>
           </div>
-          <div class="col-9 col-lg-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              enim vel possimus quaerat ullam cumque, exercitationem, doloribus
-              dignissimos quis iure voluptatibus nisi voluptates iste sunt dolor
-              dolorum. Accusamus, sapiente consequatur?
-            </p>
+          <div
+            class="col-9 col-lg-4 mx-lg-5 d-lg-flex align-items-lg-center justify-content-lg-center flex-wrap"
+          >
+            <p class="fs-1 text-center my-3 col-lg-12">承認欲求怪獸</p>
+            <p class="fs-2 col-lg-12">いいねくれー！</p>
+            <p class="fs-2 ps-5 col-lg-12">いいねくれー！</p>
           </div>
         </div>
         <div
-          class="row mx-0 justify-content-start mb-5 animate__fast"
+          class="row mx-0 justify-content-start col-lg-10 animate__fast"
           id="intro2"
         >
-          <div class="col-9 px-0 col-lg-4">
+          <div class="col-9 px-0 col-lg-5 mx-lg-5">
             <div class="mb-3">
-              <img
-                class="w-100"
-                src="https://picsum.photos/400/400?random=15"
-              />
+              <img class="w-100" src="./img/intro3.jpg" />
             </div>
           </div>
-          <div class="col-9 col-lg-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              enim vel possimus quaerat ullam cumque, exercitationem, doloribus
-              dignissimos quis iure voluptatibus nisi voluptates iste sunt dolor
-              dolorum. Accusamus, sapiente consequatur?
-            </p>
+          <div
+            class="col-9 col-lg-5 mx-lg-5 d-lg-flex align-items-lg-center justify-content-lg-center"
+          >
+            <p class="text-center fs-1 fw-bolder my-5">幸福迴圈</p>
           </div>
         </div>
         <div
-          class="row mx-0 justify-content-end mb-5 animate__fast"
+          class="row mx-0 col-lg-10 justify-content-end animate__fast"
           id="intro3"
         >
-          <div class="col-9 px-0 col-lg-4 order-lg-2">
+          <div class="col-9 px-0 col-lg-5 order-lg-2 mx-5">
             <div class="mb-3">
               <img
                 class="w-100"
-                src="https://picsum.photos/400/400?random=15"
+                style="object-fit: cover"
+                src="./img/eeeene.gif"
               />
             </div>
           </div>
-          <div class="col-9 col-lg-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              enim vel possimus quaerat ullam cumque, exercitationem, doloribus
-              dignissimos quis iure voluptatibus nisi voluptates iste sunt dolor
-              dolorum. Accusamus, sapiente consequatur?
-            </p>
+          <div
+            class="col-9 col-lg-5 d-lg-flex align-items-lg-center justify-content-lg-end mx-5"
+          >
+            <p class="text-center fs-1 fw-bolder my-3 me-5">:&ensp;)</p>
           </div>
         </div>
 
         <!-- LIVE VIDEO -->
         <div id="live_section" class="">
-          <h1 class="fw-bolder text-center mb-3" style="font-size: 2.5rem">
-            LIVE
-          </h1>
+          <h1 class="fw-bolder text-center mb-3 mb-lg-5">LIVE</h1>
           <div class="row px-0 mx-0 justify-content-center">
-            <div class="col-9 col-lg-3 videobox mx-lg-3">
+            <div class="col-9 col-lg-3 videobox mx-lg-4">
               <div
                 class="videobox_item"
-                onclick="openVideoModal(this)"
-                data-video-url="https://www.youtube.com/embed/fJh5UeiULZs"
                 data-bs-toggle="modal"
                 data-bs-target="#live_modal"
               >
@@ -204,11 +225,10 @@
               <span></span>
               <span></span>
             </div>
-            <div class="col-9 col-lg-3 videobox mx-lg-3">
+            <div class="col-9 col-lg-3 videobox mx-lg-4">
               <div
                 class="videobox_item"
-                onclick="openVideoModal(this)"
-                data-video-url="https://www.youtube.com/embed/5R9Hy3cDAxM"
+                data-video-url="https://www.youtube.com/embed/M7lc1UVf-VE"
                 data-bs-toggle="modal"
                 data-bs-target="#live_modal"
               >
@@ -223,10 +243,9 @@
               <span></span>
               <span></span>
             </div>
-            <div class="col-9 col-lg-3 videobox mx-lg-3">
+            <div class="col-9 col-lg-3 videobox mx-lg-4">
               <div
                 class="videobox_item"
-                onclick="openVideoModal(this)"
                 data-video-url="https://www.youtube-nocookie.com/embed/2horERMAPt4"
                 data-bs-toggle="modal"
                 data-bs-target="#live_modal"
@@ -244,24 +263,6 @@
             </div>
           </div>
           <!-- live modal -->
-          <div class="modal fade" id="live_modal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered m-0">
-              <div class="modal-content rounded-0">
-                <div class="modal-body p-1">
-                  <iframe
-                    id="live_video"
-                    width="640"
-                    height="360"
-                    src=""
-                    title="YouTube video player"
-                    frameborder="0"
-                    allowfullscreen
-                    allow="autoplay;encrypted-media;"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- PICTures -->
         <div id="picture_section" class="w-100 mb-5">
@@ -275,29 +276,25 @@
               space-between="10"
               centered-slides="true"
               loop="true"
-              data-swiper-initial-slide="3"
+              data-swiper-initial-slide="2"
               zoom="true"
+              break
             >
               <swiper-slide>
-                <img src="https://picsum.photos/320/180?random=1" alt="" />
+                <img src="./img/pics/azACLrOl.png" alt="" />
               </swiper-slide>
-              <swiper-slide onclick="picZoom(this)">
-                <img src="https://picsum.photos/320/180?random=2" alt=""
-              /></swiper-slide>
-              <swiper-slide
-                onclick="picZoom(this)"
-                style="border: 2px solid red"
-              >
-                <img src="https://picsum.photos/320/180?random=3" alt=""
-              /></swiper-slide>
-              <swiper-slide onclick="picZoom(this)">
-                <img src="https://picsum.photos/320/180?random=4" alt=""
+              <swiper-slide>
+                <img src="./img/pics/bocchi-the-rock@2000x1270.jpg" alt=""
               /></swiper-slide>
               <swiper-slide>
-                <img src="https://picsum.photos/320/180?random=5" alt=""
+                <img
+                  src="./img/pics/bocchi_the_rock_20221122150140 (1).jpg"
+                  alt=""
               /></swiper-slide>
               <swiper-slide>
-                <img src="https://picsum.photos/320/180?random=6" alt=""
+                <img
+                  src="./img/pics/f091f7dda4760dda872415b0a1a79e39d46bc742-1920x1080.webp"
+                  alt=""
               /></swiper-slide>
             </swiper-container>
           </div>
