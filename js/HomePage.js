@@ -114,8 +114,9 @@ setInterval(() => {
   }
 }, 100);
 
-function hello(name) {
-  console.log("play video~a", name);
+function toTopFn() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 // moveing item reaction
