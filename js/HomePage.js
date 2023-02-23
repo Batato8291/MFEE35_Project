@@ -154,3 +154,7 @@ function movingItemPath(targetEl, referenceEl, option) {
 }
 movingItemPath(".moving_item", "#intro_selection", "start");
 // movingItemPath(".moving_box", "#intro_selection .turn_left", "turnLeft");
+function testMove() {
+  const el = document.querySelector("#test-area");
+  el.classList.add("animate__animated", "animate__lightSpeedInRight");
+}

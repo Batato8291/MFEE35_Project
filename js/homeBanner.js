@@ -13,10 +13,11 @@ function createCarousel() {
     thumbnails[n].classList.add("active");
     const img = thumbnails[n].querySelector("img");
     const imgSrc = img.getAttribute("src");
+    const imgBkUrl = thumbnails[n].dataset.img;
 
     setTimeout(() => {
       mainImage.setAttribute("src", imgSrc);
-      bannerBk.style.backgroundImage = `url(.${imgSrc})`;
+      bannerBk.style.backgroundImage = `url(img/${imgBkUrl})`;
       mainImage.style.opacity = 1;
     }, 200);
     currentThumbnail = n;
@@ -30,7 +31,7 @@ function createCarousel() {
   }
 
   thumbnails.forEach((thumbnail, thumbnailIndex) => {
-    thumbnail.addEventListener("click", function() {
+    thumbnail.addEventListener("click", function () {
       const index = thumbnailIndex;
 
       changeSlide(index);

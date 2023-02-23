@@ -112,28 +112,28 @@
           <div data-img="album2.jpg" class="thumbnail">
             <img src="./img/album2.jpg" />
           </div>
-          <div data-img="image3.jpg" class="thumbnail">
+          <div data-img="album3.jpg" class="thumbnail">
             <img src="./img/album3.jpg" />
           </div>
-          <div data-img="image4.jpg" class="thumbnail">
+          <div data-img="album4.jpg" class="thumbnail">
             <img src="./img/album4.jpg" />
           </div>
-          <div data-img="image5.jpg" class="thumbnail">
+          <div data-img="album5.jpg" class="thumbnail">
             <img src="./img/album5.jpg" />
           </div>
-          <div data-img="image6.jpg" class="thumbnail">
+          <div data-img="album6.jpg" class="thumbnail">
             <img src="./img/album6.jpg" />
           </div>
-          <div data-img="image7.jpg" class="thumbnail">
+          <div data-img="album7.jpg" class="thumbnail">
             <img src="./img/album7.jpg" />
           </div>
-          <div data-img="image8.jpg" class="thumbnail">
+          <div data-img="album8.jpg" class="thumbnail">
             <img src="./img/album8.jpg" />
           </div>
-          <div data-img="image9.jpg" class="thumbnail">
+          <div data-img="album9.jpg" class="thumbnail">
             <img src="./img/album9.jpg" />
           </div>
-          <div data-img="image10.jpg" class="thumbnail">
+          <div data-img="album10.jpg" class="thumbnail">
             <img src="./img/album10.jpg" />
           </div>
         </div>
@@ -214,6 +214,8 @@
             <div class="col-9 col-lg-3 videobox mx-lg-4">
               <div
                 class="videobox_item"
+                onclick="openVideoModal(this)"
+                data-video-url="https://www.youtube.com/embed/fJh5UeiULZs?autoplay=1"
                 data-bs-toggle="modal"
                 data-bs-target="#live_modal"
               >
@@ -231,7 +233,8 @@
             <div class="col-9 col-lg-3 videobox mx-lg-4">
               <div
                 class="videobox_item"
-                data-video-url="https://www.youtube.com/embed/M7lc1UVf-VE"
+                onclick="openVideoModal(this)"
+                data-video-url="https://www.youtube.com/embed/p010N38zFrA?autoplay=1"
                 data-bs-toggle="modal"
                 data-bs-target="#live_modal"
               >
@@ -249,7 +252,8 @@
             <div class="col-9 col-lg-3 videobox mx-lg-4">
               <div
                 class="videobox_item"
-                data-video-url="https://www.youtube-nocookie.com/embed/2horERMAPt4"
+                onclick="openVideoModal(this)"
+                data-video-url="https://www.youtube-nocookie.com/embed/5tc14WHUoMw?autoplay=1"
                 data-bs-toggle="modal"
                 data-bs-target="#live_modal"
               >
@@ -265,8 +269,36 @@
               <span></span>
             </div>
           </div>
-          <!-- live modal -->
         </div>
+
+        <!-- test-area -->
+        <div id="test-area" onmouseover="testMove()">
+          <svg width="390" height="200">
+            <path
+              id="motionPath"
+              d="m 374.96989,23.198149 c -18.57909,8.34728 -60.53646,20.46026 -63.13276,36.63161 -0.96733,6.02508 13.8287,9.9226 18.85784,15.40197 6.31535,6.88073 19.54536,14.6088 13.93839,21.64597 -6.14332,7.710311 -29.52732,7.276461 -43.45501,11.655501 -18.41555,5.79014 -31.39445,17.49125 -52.7772,19.24809 -25.61078,2.10419 -64.01116,0.33472 -74.30822,-11.75523 -8.68389,-10.19592 10.44272,-29.185981 28.69671,-29.971351 29.23063,-1.25769 39.69256,18.511991 39.15051,30.699811 -0.70105,15.76314 -30.81622,28.07913 -54.11379,38.50485 -15.79766,7.06951 -34.61205,15.89456 -55.6265,15.20408 -23.72949,-0.77975 -57.237651,-9.06828 -57.93048,-21.13591 -0.42034,-7.32152 19.223167,-13.33787 33.61614,-13.84091 13.30338,-0.46495 34.88765,3.74883 34.23108,10.51078 -2.31129,23.80367 -76.411398,23.51966 -127.085408,30.80388"
+              stroke="white"
+              stroke-width="5"
+            />
+
+            <image
+              id="movingImage"
+              x="-25"
+              y="-50"
+              width="50"
+              height="50"
+              xlink:href="img/tsuchinoko.gif"
+            />
+            <animateMotion
+              xlink:href="#movingImage"
+              dur="5s"
+              repeatCount="indefinite"
+            >
+              <mpath xlink:href="#motionPath" />
+            </animateMotion>
+          </svg>
+        </div>
+
         <!-- PICTures -->
         <div id="picture_section" class="w-100 mb-5">
           <h1 class="fw-bolder mb-3 fs-2 mx-3 px-4">Picture --</h1>
@@ -334,7 +366,6 @@
               centered-slides="true"
               loop="true"
               data-swiper-initial-slide="4"
-              zoom="true"
               break
             >
               <swiper-slide>
@@ -379,6 +410,7 @@
             </swiper-container>
           </div>
         </div>
+
         <!-- SNS -->
         <div
           id="sns_section"
@@ -400,6 +432,20 @@
               charset="utf-8"
             ></script>
           </div>
+          <div class="sns_box col-10">
+            <a
+              class="twitter-timeline"
+              data-width="300"
+              data-height="500"
+              href="https://twitter.com/BTR_anime?ref_src=twsrc%5Etfw"
+              >Tweets by BTR_anime</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
         </div>
       </div>
       <!-- Moving Tsuchinoko -->
@@ -413,7 +459,9 @@
     <footer>
       <div class="container py-4">
         <div class="row m-0 p-0">
-          <div class="col-4 col-lg-2 px-2 px-lg-5 me-lg-5 align-self-center">
+          <div
+            class="col-4 col-lg-2 px-2 px-lg-5 me-lg-5 align-self-center animate__animated animate__flip"
+          >
             <img class="rounded-circle w-100" src="./img/173806.jpg" />
           </div>
           <div class="col-8 px-2 d-flex flex-column">
@@ -438,6 +486,32 @@
         </div>
       </div>
     </footer>
+    <!-- live modal -->
+    <div
+      class="modal fade"
+      id="live_modal"
+      aria-hidden="true"
+      aria-labelledby="live_modalToggleLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body p-0" style="background-color: black">
+            <iframe
+              class="w-100"
+              id="live_video"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/fJh5UeiULZs"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

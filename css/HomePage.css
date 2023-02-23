@@ -409,6 +409,7 @@ main .moving_box .moving_item.moving {
   background-image: url(../img/tsuchinoko.gif);
 }
 main .moving_box .moving_item .moving_item_touch {
+  cursor: pointer;
   position: absolute;
   bottom: 0;
   width: 20vw;
